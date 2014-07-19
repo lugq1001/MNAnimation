@@ -9,10 +9,11 @@
 /* Begin PBXBuildFile section */
 		3146C3FE197A0A020005AB13 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3146C3FD197A0A020005AB13 /* main.m */; };
 		3146C401197A0A020005AB13 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3146C400197A0A020005AB13 /* AppDelegate.m */; };
-		3146C404197A0A020005AB13 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3146C403197A0A020005AB13 /* ViewController.m */; };
 		3146C407197A0A020005AB13 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3146C405197A0A020005AB13 /* Main.storyboard */; };
 		3146C409197A0A020005AB13 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3146C408197A0A020005AB13 /* Images.xcassets */; };
 		3146C415197A0A020005AB13 /* MNAnimationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3146C414197A0A020005AB13 /* MNAnimationTests.m */; };
+		3146C422197A0C600005AB13 /* AnimationsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3146C421197A0C600005AB13 /* AnimationsController.m */; };
+		3146C429197A37970005AB13 /* StretchCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3146C428197A37970005AB13 /* StretchCellController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,13 +32,15 @@
 		3146C3FD197A0A020005AB13 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3146C3FF197A0A020005AB13 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3146C400197A0A020005AB13 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		3146C402197A0A020005AB13 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		3146C403197A0A020005AB13 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		3146C406197A0A020005AB13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3146C408197A0A020005AB13 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3146C40E197A0A020005AB13 /* MNAnimationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MNAnimationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3146C413197A0A020005AB13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3146C414197A0A020005AB13 /* MNAnimationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MNAnimationTests.m; sourceTree = "<group>"; };
+		3146C420197A0C600005AB13 /* AnimationsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AnimationsController.h; path = Controller/AnimationsController.h; sourceTree = "<group>"; };
+		3146C421197A0C600005AB13 /* AnimationsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AnimationsController.m; path = Controller/AnimationsController.m; sourceTree = "<group>"; };
+		3146C427197A37970005AB13 /* StretchCellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StretchCellController.h; path = Controller/StretchCell/StretchCellController.h; sourceTree = "<group>"; };
+		3146C428197A37970005AB13 /* StretchCellController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StretchCellController.m; path = Controller/StretchCell/StretchCellController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,10 +82,10 @@
 		3146C3FA197A0A020005AB13 /* MNAnimation */ = {
 			isa = PBXGroup;
 			children = (
+				3146C41F197A0C240005AB13 /* Core */,
+				3146C41E197A0C0B0005AB13 /* Controller */,
 				3146C3FF197A0A020005AB13 /* AppDelegate.h */,
 				3146C400197A0A020005AB13 /* AppDelegate.m */,
-				3146C402197A0A020005AB13 /* ViewController.h */,
-				3146C403197A0A020005AB13 /* ViewController.m */,
 				3146C405197A0A020005AB13 /* Main.storyboard */,
 				3146C408197A0A020005AB13 /* Images.xcassets */,
 				3146C3FB197A0A020005AB13 /* Supporting Files */,
@@ -114,6 +117,32 @@
 				3146C413197A0A020005AB13 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3146C41E197A0C0B0005AB13 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3146C426197A273A0005AB13 /* StretchCell */,
+				3146C420197A0C600005AB13 /* AnimationsController.h */,
+				3146C421197A0C600005AB13 /* AnimationsController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		3146C41F197A0C240005AB13 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		3146C426197A273A0005AB13 /* StretchCell */ = {
+			isa = PBXGroup;
+			children = (
+				3146C427197A37970005AB13 /* StretchCellController.h */,
+				3146C428197A37970005AB13 /* StretchCellController.m */,
+			);
+			name = StretchCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,9 +244,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3146C404197A0A020005AB13 /* ViewController.m in Sources */,
 				3146C401197A0A020005AB13 /* AppDelegate.m in Sources */,
+				3146C422197A0C600005AB13 /* AnimationsController.m in Sources */,
 				3146C3FE197A0A020005AB13 /* main.m in Sources */,
+				3146C429197A37970005AB13 /* StretchCellController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,7 +315,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				METAL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -320,7 +350,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				METAL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -333,6 +363,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = MNAnimation/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -344,6 +375,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = MNAnimation/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -404,6 +436,7 @@
 				3146C41A197A0A020005AB13 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3146C41B197A0A020005AB13 /* Build configuration list for PBXNativeTarget "MNAnimationTests" */ = {
 			isa = XCConfigurationList;
@@ -412,6 +445,7 @@
 				3146C41D197A0A020005AB13 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
