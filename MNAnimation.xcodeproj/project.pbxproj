@@ -14,6 +14,9 @@
 		3146C415197A0A020005AB13 /* MNAnimationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3146C414197A0A020005AB13 /* MNAnimationTests.m */; };
 		3146C422197A0C600005AB13 /* AnimationsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3146C421197A0C600005AB13 /* AnimationsController.m */; };
 		3146C429197A37970005AB13 /* StretchCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3146C428197A37970005AB13 /* StretchCellController.m */; };
+		31FD88CB197A6A1A000E97D5 /* PresentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31FD88CA197A6A1A000E97D5 /* PresentController.m */; };
+		31FD88CE197A6C3B000E97D5 /* DismissController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31FD88CD197A6C3B000E97D5 /* DismissController.m */; };
+		31FD88D1197A6E10000E97D5 /* PresentDismissAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 31FD88D0197A6E10000E97D5 /* PresentDismissAnimation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +44,12 @@
 		3146C421197A0C600005AB13 /* AnimationsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AnimationsController.m; path = Controller/AnimationsController.m; sourceTree = "<group>"; };
 		3146C427197A37970005AB13 /* StretchCellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StretchCellController.h; path = Controller/StretchCell/StretchCellController.h; sourceTree = "<group>"; };
 		3146C428197A37970005AB13 /* StretchCellController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StretchCellController.m; path = Controller/StretchCell/StretchCellController.m; sourceTree = "<group>"; };
+		31FD88C9197A6A1A000E97D5 /* PresentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PresentController.h; path = Controller/PresentDismiss/PresentController.h; sourceTree = "<group>"; };
+		31FD88CA197A6A1A000E97D5 /* PresentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PresentController.m; path = Controller/PresentDismiss/PresentController.m; sourceTree = "<group>"; };
+		31FD88CC197A6C3B000E97D5 /* DismissController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DismissController.h; path = Controller/PresentDismiss/DismissController.h; sourceTree = "<group>"; };
+		31FD88CD197A6C3B000E97D5 /* DismissController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DismissController.m; path = Controller/PresentDismiss/DismissController.m; sourceTree = "<group>"; };
+		31FD88CF197A6E10000E97D5 /* PresentDismissAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PresentDismissAnimation.h; path = Controller/PresentDismiss/PresentDismissAnimation.h; sourceTree = "<group>"; };
+		31FD88D0197A6E10000E97D5 /* PresentDismissAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PresentDismissAnimation.m; path = Controller/PresentDismiss/PresentDismissAnimation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +131,7 @@
 		3146C41E197A0C0B0005AB13 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				31FD88C8197A6951000E97D5 /* Present&Dismiss */,
 				3146C426197A273A0005AB13 /* StretchCell */,
 				3146C420197A0C600005AB13 /* AnimationsController.h */,
 				3146C421197A0C600005AB13 /* AnimationsController.m */,
@@ -143,6 +153,19 @@
 				3146C428197A37970005AB13 /* StretchCellController.m */,
 			);
 			name = StretchCell;
+			sourceTree = "<group>";
+		};
+		31FD88C8197A6951000E97D5 /* Present&Dismiss */ = {
+			isa = PBXGroup;
+			children = (
+				31FD88CF197A6E10000E97D5 /* PresentDismissAnimation.h */,
+				31FD88D0197A6E10000E97D5 /* PresentDismissAnimation.m */,
+				31FD88C9197A6A1A000E97D5 /* PresentController.h */,
+				31FD88CA197A6A1A000E97D5 /* PresentController.m */,
+				31FD88CC197A6C3B000E97D5 /* DismissController.h */,
+				31FD88CD197A6C3B000E97D5 /* DismissController.m */,
+			);
+			name = "Present&Dismiss";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,8 +267,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31FD88CE197A6C3B000E97D5 /* DismissController.m in Sources */,
 				3146C401197A0A020005AB13 /* AppDelegate.m in Sources */,
 				3146C422197A0C600005AB13 /* AnimationsController.m in Sources */,
+				31FD88CB197A6A1A000E97D5 /* PresentController.m in Sources */,
+				31FD88D1197A6E10000E97D5 /* PresentDismissAnimation.m in Sources */,
 				3146C3FE197A0A020005AB13 /* main.m in Sources */,
 				3146C429197A37970005AB13 /* StretchCellController.m in Sources */,
 			);

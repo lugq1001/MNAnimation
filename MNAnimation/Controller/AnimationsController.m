@@ -9,6 +9,7 @@
 #import "AnimationsController.h"
 
 static NSString * const kAnimationHiddenCell = @"Stretch Cell";
+static NSString * const kAnimationPresentDismiss = @"Present&Dismiss";
 
 @interface AnimationsController ()
 
@@ -21,7 +22,7 @@ static NSString * const kAnimationHiddenCell = @"Stretch Cell";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.animations = @[kAnimationHiddenCell];
+    self.animations = @[kAnimationHiddenCell,kAnimationPresentDismiss];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
