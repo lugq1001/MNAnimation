@@ -64,6 +64,7 @@
 {
     PresentDismissAnimation *animation = [PresentDismissAnimation new];
     animation.animationType = [self.presentPicker selectedRowInComponent:0];
+    animation.duration = .5f;
     return animation;
 }
 
@@ -71,6 +72,7 @@
 {
     PresentDismissAnimation *animation = [PresentDismissAnimation new];
     animation.animationType = [self.dismissPicker selectedRowInComponent:0];
+    animation.duration = .5f;
     return animation;
 }
 

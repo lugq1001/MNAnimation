@@ -23,7 +23,11 @@ typedef NS_ENUM(NSInteger, MNControllerAnimationType)
     MNControllerAnimationTypeSlideOutToLeft,
     MNControllerAnimationTypeSlideOutToRight,
     MNControllerAnimationTypeSlideOutToTop,
-    MNControllerAnimationTypeSlideOutToBottom
+    MNControllerAnimationTypeSlideOutToBottom,
+    MNControllerAnimationTypeSlideInFromLeftWithSpring,
+    MNControllerAnimationTypeSlideInFromRightWithSpring,
+    MNControllerAnimationTypeSlideInFromTopWithSpring,
+    MNControllerAnimationTypeSlideInFromBottomWithSpring
 };
 
 @interface PresentDismissAnimation : NSObject <UIViewControllerAnimatedTransitioning>

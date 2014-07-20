@@ -12,7 +12,7 @@
 
 + (NSArray *)animationsTypeArray
 {
-    return @[@"Grow", @"Shrink", @"Fade", @"ShrinkWithRotation", @"GrowWithRotationrow", @"SlideInFromLeft", @"SlideInFromRight", @"SlideInFromTop", @"SlideInFromBottom", @"SlideOutToLeft", @"SlideOutToRight", @"SlideOutToTop", @"SlideOutToBottom"];
+    return @[@"Grow", @"Shrink", @"Fade", @"ShrinkWithRotation", @"GrowWithRotationrow", @"SlideInFromLeft", @"SlideInFromRight", @"SlideInFromTop", @"SlideInFromBottom", @"SlideOutToLeft", @"SlideOutToRight", @"SlideOutToTop", @"SlideOutToBottom", @"SlideInFromLeftWithSpring", @"SlideInFromRightWithSpring", @"SlideInFromTopWithSpring", @"SlideInFromBottomWithSpring"];
 }
 
 - (CGFloat)getDuration
@@ -66,6 +66,17 @@
             break;
         case MNControllerAnimationTypeSlideOutToBottom:
             [self performAnimationTypeSlideOut:transitionContext withType:MNControllerAnimationTypeSlideOutToBottom];
+            break;
+        case MNControllerAnimationTypeSlideInFromLeftWithSpring:
+            [self performAnimationTypeSlideInWithSpring:transitionContext withType:MNControllerAnimationTypeSlideInFromLeftWithSpring];
+            break;
+        case MNControllerAnimationTypeSlideInFromRightWithSpring:
+            [self performAnimationTypeSlideInWithSpring:transitionContext withType:MNControllerAnimationTypeSlideInFromRightWithSpring];
+        case MNControllerAnimationTypeSlideInFromTopWithSpring:
+            [self performAnimationTypeSlideInWithSpring:transitionContext withType:MNControllerAnimationTypeSlideInFromTopWithSpring];
+            break;
+        case MNControllerAnimationTypeSlideInFromBottomWithSpring:
+            [self performAnimationTypeSlideInWithSpring:transitionContext withType:MNControllerAnimationTypeSlideInFromBottomWithSpring];
             break;
     }
     
@@ -269,4 +280,64 @@
                      }];
 }
 
+- (void)performAnimationTypeSlideInWithSpring:(id<UIViewControllerContextTransitioning>)transitionContext withType:(MNControllerAnimationType)type
+{
+    UIViewController *to = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
+    UIViewController *from = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
+    
+    CGFloat travelDistanceHorizontal = [transitionContext containerView].bounds.size.width + 20;
+    CGFloat travelDistanceVertical = [transitionContext containerView].bounds.size.height + 20;
+    CGAffineTransform travel;
+    switch (type) {
+        case MNControllerAnimationTypeSlideInFromLeftWithSpring:
+            travel = CGAffineTransformMakeTranslation (travelDistanceHorizontal , 0);
+            break;
+        case MNControllerAnimationTypeSlideInFromRightWithSpring:
+            travel = CGAffineTransformMakeTranslation (-travelDistanceHorizontal , 0);
+            break;
+        case MNControllerAnimationTypeSlideInFromTopWithSpring:
+            travel = CGAffineTransformMakeTranslation (0 , travelDistanceVertical);
+            break;
+        case MNControllerAnimationTypeSlideInFromBottomWithSpring:
+            travel = CGAffineTransformMakeTranslation (0 , -travelDistanceVertical);
+            break;
+        default:
+            break;
+            
+    }
+    
+    [[transitionContext containerView] addSubview:to.view];
+    to.view.alpha = 0;
+    to.view.transform = CGAffineTransformInvert (travel);
+    
+    [UIView animateWithDuration:[self transitionDuration:transitionContext] delay:0 usingSpringWithDamping:.75f initialSpringVelocity:.5f options:0x00 animations:^{
+        from.view.transform = travel;
+        from.view.alpha = 0;
+        to.view.transform = CGAffineTransformIdentity;
+        to.view.alpha = 1;
+    } completion:^(BOOL finished) {
+        from.view.transform = CGAffineTransformIdentity;
+        [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
+        from.view.alpha = 1;
+    }];
+}
+
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
