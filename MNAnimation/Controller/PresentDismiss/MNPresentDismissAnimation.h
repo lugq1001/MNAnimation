@@ -1,5 +1,5 @@
 //
-//  PresentDismissAnimation.h
+//  MNPresentDismissAnimation.h
 //  MNAnimation
 //
 //  Created by 陆广庆 on 14/7/19.
@@ -30,7 +30,7 @@ typedef NS_ENUM(NSInteger, MNControllerAnimationType)
     MNControllerAnimationTypeSlideInFromBottomWithSpring
 };
 
-@interface PresentDismissAnimation : NSObject <UIViewControllerAnimatedTransitioning>
+@interface MNPresentDismissAnimation : NSObject <UIViewControllerAnimatedTransitioning>
 
 @property (nonatomic) MNControllerAnimationType animationType;
 @property (nonatomic,getter = getDuration) CGFloat duration;

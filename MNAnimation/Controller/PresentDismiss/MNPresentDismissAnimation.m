@@ -1,14 +1,14 @@
 //
-//  PresentDismissAnimation.m
+//  MNPresentDismissAnimation.m
 //  MNAnimation
 //
 //  Created by 陆广庆 on 14/7/19.
 //  Copyright (c) 2014年 陆广庆. All rights reserved.
 //
 
-#import "PresentDismissAnimation.h"
+#import "MNPresentDismissAnimation.h"
 
-@implementation PresentDismissAnimation
+@implementation MNPresentDismissAnimation
 
 + (NSArray *)animationsTypeArray
 {
@@ -72,6 +72,7 @@
             break;
         case MNControllerAnimationTypeSlideInFromRightWithSpring:
             [self performAnimationTypeSlideInWithSpring:transitionContext withType:MNControllerAnimationTypeSlideInFromRightWithSpring];
+            break;
         case MNControllerAnimationTypeSlideInFromTopWithSpring:
             [self performAnimationTypeSlideInWithSpring:transitionContext withType:MNControllerAnimationTypeSlideInFromTopWithSpring];
             break;

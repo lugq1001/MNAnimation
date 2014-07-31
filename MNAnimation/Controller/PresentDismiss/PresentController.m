@@ -7,7 +7,7 @@
 //
 
 #import "PresentController.h"
-#import "PresentDismissAnimation.h"
+#import "MNPresentDismissAnimation.h"
 #import "DismissController.h"
 
 @interface PresentController () <UIViewControllerTransitioningDelegate, UIPickerViewDelegate ,UIPickerViewDataSource>
@@ -23,7 +23,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.animations = [PresentDismissAnimation animationsTypeArray];
+    self.animations = [MNPresentDismissAnimation animationsTypeArray];
     self.presentPicker.dataSource = self;
     self.presentPicker.delegate = self;
     self.dismissPicker.dataSource = self;
@@ -52,8 +52,11 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    DismissController *dismissController = [segue destinationViewController];;
-    dismissController.transitioningDelegate = self;
+    UIViewController *ctl = [segue destinationViewController];
+    if ([ctl isMemberOfClass:[DismissController class]]) {
+        ctl.transitioningDelegate = self;
+    }
+    
 }
 
 #pragma mark - Transitioning Delegate
@@ -62,18 +65,18 @@
                                                                  presentingController:(UIViewController *)presenting
                                                                      sourceController:(UIViewController *)source
 {
-    PresentDismissAnimation *animation = [PresentDismissAnimation new];
+    MNPresentDismissAnimation *animation = [MNPresentDismissAnimation new];
     animation.animationType = [self.presentPicker selectedRowInComponent:0];
-    animation.duration = .5f;
+    animation.duration = .7f;
     return animation;
 }
 
 -(id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed
 {
-    PresentDismissAnimation *animation = [PresentDismissAnimation new];
+    MNPresentDismissAnimation *animation = [MNPresentDismissAnimation new];
     animation.animationType = [self.dismissPicker selectedRowInComponent:0];
-    animation.duration = .5f;
-    return animation;
+    animation.duration = .7f;
+    return nil;
 }
 
 @end
