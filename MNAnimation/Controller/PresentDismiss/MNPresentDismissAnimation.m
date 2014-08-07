@@ -22,12 +22,12 @@
 
 - (NSTimeInterval)transitionDuration:(id<UIViewControllerContextTransitioning>)transitionContext
 {
-    return self.duration = self.duration > 0 ? self.duration : 0.25;
+    return _duration = _duration > 0 ? _duration : 0.25;
 }
 
 - (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext
 {
-    switch(self.animationType){
+    switch(_animationType){
         case MNControllerAnimationTypeGrow:
             [self performAnimationTypeGrow:transitionContext];
             break;
@@ -95,7 +95,7 @@
     to.view.hidden = YES;
     CGAffineTransform scale = CGAffineTransformMakeScale(.01f, .01f);
     toSnapShotView.transform = scale;
-    [UIView animateWithDuration:self.duration
+    [UIView animateWithDuration:_duration
                           delay:.0f
                         options:UIViewAnimationOptionCurveLinear
                      animations:^{
@@ -121,7 +121,7 @@
     snapShotView.frame = from.view.frame;
     [containerView addSubview:snapShotView];
     [from.view removeFromSuperview];
-    [UIView animateWithDuration:self.duration
+    [UIView animateWithDuration:_duration
                           delay:.0f
                         options:UIViewAnimationOptionCurveLinear
                      animations:^{
@@ -142,7 +142,7 @@
     [containerView addSubview:to.view];
     to.view.alpha = .2f;
     from.view.alpha = 1.0f;
-    [UIView animateWithDuration:self.duration
+    [UIView animateWithDuration:_duration
                           delay:.0f
                         options:UIViewAnimationOptionCurveLinear
                      animations:^{
@@ -170,7 +170,7 @@
     [from.view removeFromSuperview];
     CGAffineTransform scale = CGAffineTransformMakeScale(.01f, .01f);
     CGAffineTransform rotate = CGAffineTransformMakeRotation(rotation);
-    [UIView animateWithDuration:self.duration
+    [UIView animateWithDuration:_duration
                           delay:.0f
                         options:UIViewAnimationOptionCurveLinear
                      animations:^{
@@ -195,7 +195,7 @@
     CGAffineTransform scale = CGAffineTransformMakeScale(.01f, .01f);
     CGAffineTransform rotate = CGAffineTransformMakeRotation(rotation);
     toSnapShotView.transform = CGAffineTransformConcat(scale, rotate);
-    [UIView animateWithDuration:self.duration
+    [UIView animateWithDuration:_duration
                           delay:.0f
                         options:UIViewAnimationOptionCurveLinear
                      animations:^{
@@ -233,7 +233,7 @@
     }
     
     to.view.frame = initialRect;
-    [UIView animateWithDuration:self.duration
+    [UIView animateWithDuration:_duration
                           delay:.0f
                         options:UIViewAnimationOptionCurveLinear
                      animations:^{
@@ -270,7 +270,7 @@
             break;
             
     }
-    [UIView animateWithDuration:self.duration
+    [UIView animateWithDuration:_duration
                           delay:.0f
                         options:UIViewAnimationOptionCurveLinear
                      animations:^{

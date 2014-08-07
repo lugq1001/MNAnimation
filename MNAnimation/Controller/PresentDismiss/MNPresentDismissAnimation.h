@@ -11,10 +11,10 @@
 
 typedef NS_ENUM(NSInteger, MNControllerAnimationType)
 {
-    MNControllerAnimationTypeGrow,
-    MNControllerAnimationTypeShrink,
-    MNControllerAnimationTypeFade,
-    MNControllerAnimationTypeShrinkWithRotation,
+    MNControllerAnimationTypeGrow, //渐现
+    MNControllerAnimationTypeShrink,//源缩小
+    MNControllerAnimationTypeFade, //渐隐
+    MNControllerAnimationTypeShrinkWithRotation, //旋转缩小
     MNControllerAnimationTypeGrowWithRotation,
     MNControllerAnimationTypeSlideInFromLeft,
     MNControllerAnimationTypeSlideInFromRight,
